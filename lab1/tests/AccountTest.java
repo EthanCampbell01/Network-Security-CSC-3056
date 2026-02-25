@@ -1,6 +1,5 @@
 package tests;
 
-import java.text.SimpleDateFormat;
 import model.Account;
 import utils.TestUtils;
 
@@ -10,7 +9,7 @@ public class AccountTest {
         String accNum = "5495-1234";
         String username = "mike@gmail.com";
         String type = "Standard";
-        var date = new SimpleDateFormat("dd/MM/yyyy").parse("20/08/2019");
+        java.util.Date date = new java.text.SimpleDateFormat("dd/MM/yyyy").parse("20/08/2019");
 
         Account a = new Account(accNum, username, type, date);
 
@@ -34,9 +33,9 @@ public class AccountTest {
     }
 
     public static void testSetters() throws Exception {
-        var date1 = new SimpleDateFormat("dd/MM/yyyy").parse("20/08/2019");
-        var date2 = new SimpleDateFormat("dd/MM/yyyy").parse("21/08/2020");
-
+        java.util.Date date1 = new java.text.SimpleDateFormat("dd/MM/yyyy").parse("20/08/2019");
+        java.util.Date date2 = new java.text.SimpleDateFormat("dd/MM/yyyy").parse("20/08/2020");
+        
         Account a = new Account("A", "U", "Standard", date1);
 
         a.setAccount_number("B");

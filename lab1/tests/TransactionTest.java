@@ -1,6 +1,5 @@
 package tests;
 
-import java.text.SimpleDateFormat;
 import model.Transaction;
 import utils.TestUtils;
 
@@ -9,7 +8,7 @@ public class TransactionTest {
     public static void testConstructorAndGetters() throws Exception {
         String accNum = "5495-1234";
         double amt = 50.21;
-        var date = new SimpleDateFormat("dd/MM/yyyy").parse("20/08/2019");
+        java.util.Date date = new java.text.SimpleDateFormat("dd/MM/yyyy").parse("20/08/2019");
 
         Transaction t = new Transaction(accNum, amt, date);
 
@@ -29,8 +28,8 @@ public class TransactionTest {
     }
 
     public static void testSetters() throws Exception {
-        var date1 = new SimpleDateFormat("dd/MM/yyyy").parse("20/08/2019");
-        var date2 = new SimpleDateFormat("dd/MM/yyyy").parse("21/08/2020");
+        java.util.Date date1 = new java.text.SimpleDateFormat("dd/MM/yyyy").parse("20/08/2019");
+        java.util.Date date2 = new java.text.SimpleDateFormat("dd/MM/yyyy").parse("20/08/2020");
 
         Transaction t = new Transaction("A", 1.0, date1);
 
